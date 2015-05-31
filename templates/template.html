@@ -4,6 +4,12 @@
     <title>Flask Template Example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
+      .input {
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #252525;
+        color: green;
+      }
       .container {
         max-width: 500px;
         padding-top: 100px;
@@ -22,9 +28,8 @@
     </style>
   </head>
   <body>
-    <div class="container">
-      <div id="banner">
-      	<pre>
+    <div id="banner">
+      <pre>
         ****************************************************************
         *   fffffff   rrrrrrr   y     y m     m       a      n    n    *
         *   f         r     r    y   y  mm   mm      a a     nn   n    *
@@ -33,8 +38,9 @@
         *   f         r  r         y    m     m   a       a  n   nn    *
         *   f         r    r       y    m     m  a         a n    n    *
         ****************************************************************
-      	</pre>
-      </div>
+      </pre>
+    </div>
+    <div class="container">
       <p>{{motd}}</p>
       <input id="MUD_TEXT" name="fooput" value="" />
     </div>
