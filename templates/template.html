@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flask Template Example</title>
+    <title>Nash is Dash - SPACE MUD</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
-      .input {
+      input {
         margin-left: auto;
         margin-right: auto;
         background-color: #252525;
         color: green;
+        border-style: none;
+        width: 100%;
       }
       .container {
-        max-width: 500px;
+        max-width: 600px;
         padding-top: 100px;
         margin-left: auto;
-      	margin-right: auto;
-      }
-      #banner {
-      	line-height: .5px;
-      	margin-left: auto;
       	margin-right: auto;
       }
       body {
@@ -28,21 +25,26 @@
     </style>
   </head>
   <body>
-    <div id="banner">
-      <pre>
-        ****************************************************************
-        *   fffffff   rrrrrrr   y     y m     m       a      n    n    *
-        *   f         r     r    y   y  mm   mm      a a     nn   n    *
-        *   ffff      r     r     y y   m m m m     a   a    n n  n    *
-        *   f         rrrrrrr      y    m  m  m    aaaaaaa   n  n n    *
-        *   f         r  r         y    m     m   a       a  n   nn    *
-        *   f         r    r       y    m     m  a         a n    n    *
-        ****************************************************************
-      </pre>
-    </div>
     <div class="container">
-      <p>{{motd}}</p>
-      <input id="MUD_TEXT" name="fooput" value="" />
+      <pre id="banner">
+****************************************************************
+*   fffffff   rrrrrrr   y     y m     m       a      n    n    *
+*   f         r     r    y   y  mm   mm      a a     nn   n    *
+*   ffff      r     r     y y   m m m m     a   a    n n  n    *
+*   f         rrrrrrr      y    m  m  m    aaaaaaa   n  n n    *
+*   f         r  r         y    m     m   a       a  n   nn    *
+*   f         r    r       y    m     m  a         a n    n    *
+****************************************************************
+
+{{motd}}
+      </pre>
+      <input id="text-input" placeholder=">:" />
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $("#text-input").focus();
+    });
+    </script>
    </body>
 </html>
