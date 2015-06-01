@@ -5,11 +5,15 @@ input {
     color: green;
     border-style: none;
     width: 100%;
-    border-top: solid 1px gray;
+    border-bottom: solid 1px gray;
     outline: none;
+}
+#banner {
+  margin-bottom: 0;
 }
 .container {
     max-width: 600px;
+    max-height: 400px;
     padding-top: 100px;
     margin-left: auto;
   	margin-right: auto;
