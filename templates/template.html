@@ -31,6 +31,14 @@
         socket.on('communication', function(msg) {
           console.log(msg);
         });
+
+        $('#text-input').on('keypress', function (event) {
+          if(event.which === 13){
+            socket.emit("communication", {"target": "all", "data": $(this).val() });
+
+            $(this).val("");
+          }
+       });
       });
     </script>
    </body>
