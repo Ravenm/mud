@@ -29,7 +29,8 @@
 
         var socket = io.connect('http://' + document.domain + ':' + location.port + '/mud');
         socket.on('communication', function(msg) {
-          console.log(msg);
+          msg.name = "Name"
+          $("#banner").append("\n"+msg.name+": " + msg.data)
         });
 
         $('#text-input').on('keypress', function (event) {
