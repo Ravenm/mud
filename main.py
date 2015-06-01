@@ -1,6 +1,9 @@
 from flask import Flask, render_template
-from flask_socketio import SocketIO, emit
+from flask.ext.socketio import SocketIO, emit
+
+
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
 
@@ -15,5 +18,14 @@ def communicate(message):
     emit('communication', {"message": "Received"})
 
 
+@socketio.on('connect', namespace='/mud')
+def test_connect():
+    emit('communication', {'data': 'Connected'})
+
+
+@socketio.on('disconnect', namespace='/mud')
+def test_disconnect():
+    print('Client disconnected')
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    socketio.run(app)
