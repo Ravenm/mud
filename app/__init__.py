@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session
+from flask import Flask, session
 from flask.ext.socketio import SocketIO, emit
 
 
@@ -6,14 +6,12 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = '\x8e \x99\xe2\xc0\xda\xe1\xcdQ\xcb$\x05\xcf\xca\x1e|\xdb\xfa\xb4\x1f\xbd\xbc&\xb2'
 socketio = SocketIO(app)
 
-
-@app.route('/')
-def template_test():
-    return render_template('template.html', motd="For help or commands type !help")
+from app import views
 
 
 @socketio.on("communication", namespace="/mud")
 def communicate(message):
+    print message
     if 'logged' in session:
         if message["data"].startswith("!"):
             print "Command!"
