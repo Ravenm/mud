@@ -42,7 +42,3 @@ def communicate(message):
 
 def server_communication(msg, broadcast=False):
     emit('communication', {"name": "Server", "data": msg}, broadcast=broadcast)
-
-
-if __name__ == '__main__':
-    socketio.run(app)
