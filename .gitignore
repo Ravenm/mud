@@ -1,3 +1,4 @@
 *.pyc
 *.log
 pid.txt
+.vagrant/
